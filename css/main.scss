@@ -1,0 +1,179 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+// font variable
+$font: 'Poppins',
+serif;
+
+// Primary Colors
+$primary-red: #EA5353;
+$primary-cyan: #45D3D3;
+$primary-orange: #FCAF4A;
+$primary-blue: #549EF2;
+
+// Neutral Colors
+$neutral-dark-blue: #4C4E61;
+$neutral-grayish-blue: #A3A5AE;
+$neutral-light-gray: #FAFAFA;
+
+
+$font-light: 200;
+$font-bold: 400;
+$font-strong: 600;
+
+
+html {
+    box-sizing: inherit;
+    font-size: 16px;
+    font-family: $font;
+}
+
+body {
+    background-color: darken($neutral-light-gray, 1%);
+    margin: 0 auto;
+    padding-top: 20px;
+    color: $neutral-dark-blue;
+}
+
+// section for top portion of block
+.block__top {
+    height: 20vh;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+
+    .text--small {
+        line-height: 0.8;
+        color: $neutral-dark-blue;
+        font-weight: $font-light;
+    }
+
+    .text--strong {
+        color: $neutral-dark-blue;
+        font-weight: $font-strong;
+    }
+
+    .text--normal {
+        font-size: 1rem;
+        padding-top: 15px;
+        display: inline-block;
+        width: 40%;
+    }
+
+    @media screen and (max-width: 375px){
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        .text--small{
+            line-height: 1;
+        }
+        .text--normal{
+            width: 80%;
+            font-size: 0.9rem;
+            
+        }
+    }
+}
+
+// Section for team builder portion of Block
+.block__grid {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+
+    .block__grid--mid {
+        display: grid;
+        grid-template-rows: auto auto;
+        row-gap: 30px;
+    }
+
+    .block {
+        border-radius: 5px;
+        height: 250px;
+        width: 350px;
+        margin: 10px;
+        padding: 25px;
+        background-color: white;
+        box-shadow: 0px 13px 40px -7px rgba(76, 78, 97, 0.21);
+
+        img {
+            margin-left: 70%;
+            margin-top: 15%;
+        }
+    }
+
+    #calculator {
+        border-top: 4px solid $primary-red;
+        vertical-align: middle;
+    }
+
+    #supervisor {
+        border-top: 4px solid $primary-cyan;
+        vertical-align: middle;
+    }
+
+    #team-builder {
+        border-top: 4px solid $primary-blue;
+        align-self: center;
+    }
+
+    #karma {
+        border-top: 4px solid $primary-orange;
+        align-self: center;
+    }
+
+    @media screen and (max-width: 375px){
+        font-size: 0.9rem;
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0px auto;
+       
+        h2{
+            font-size: 1.2rem;
+            padding-bottom: 5px;
+        }
+
+        .block{
+            height: 32vh;
+            width: 80vw;
+            align-items: center;
+        }
+
+    }
+}
+
+footer {
+    margin: 20px auto;
+    text-align: center;
+
+    p {
+        font-size: 1.2rem;
+
+        a {
+            text-decoration: none;
+            color: $primary-red;
+        }
+
+        a:hover {
+            color: $primary-cyan;
+        }
+
+    }
+
+    @media screen and (max-width: 375px){
+        display: inline-block;
+        width: 80vw;
+        p{
+        font-size: 1rem;
+        }
+    }
+}
